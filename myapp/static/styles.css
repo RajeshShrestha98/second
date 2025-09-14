@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    background-color: blue;
+    color: aliceblue;
+    align-content: center;
+}
+body{
+    background-color: aqua;
+}
+
+a button{
+    padding: 10px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 20px;
+}
+
+h2{
+    background-color: blue;
+}
