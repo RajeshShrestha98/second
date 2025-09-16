@@ -18,6 +18,7 @@ ALLOWED_HOSTS = [
     'rajeshshrestha179.com.np',
     'www.rajeshshrestha179.com.np',
     'portfolio-l066.onrender.com',
+    '*',  # temporary debug only
 ]
 
 # Application definition
