@@ -8,7 +8,7 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Secret key from Render environment variable
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-secret-key')
 
 # Debug off for production
 DEBUG = False
@@ -18,7 +18,6 @@ ALLOWED_HOSTS = [
     'rajeshshrestha179.com.np',
     'www.rajeshshrestha179.com.np',
     'portfolio-l066.onrender.com',
-    '*',  # temporary debug only
 ]
 
 # Application definition
@@ -62,15 +61,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mero.wsgi.application'
 
-# Database configuration from Render environment variables
+# SQLite database (file-based)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT', '3306'),
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',  # Database file will be created in project root
     }
 }
 
